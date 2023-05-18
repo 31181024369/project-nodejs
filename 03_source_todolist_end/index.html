@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container-xxl my-3">
+        <!-- TITLE : START -->
+        <h1 class="header">Project - Todo List</h1>
+        <!-- TITLE : END -->
+
+        <div class="card border mt-3">
+            <div class="card-body">
+                <!-- CONTROL : START -->
+                <div class="row">
+                    <div class="col-4">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Enter keyword ..." id="input-search" />
+                            <button class="btn btn-outline-info" type="button" id="btn-search">Go!</button>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex justify-content-center align-items-center">
+                        <div class="btn-group me-3">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2"
+                                data-mdb-toggle="dropdown" aria-expanded="false">
+                                Sort by
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <li>
+                                    <button class="dropdown-item sort-value" type="button" data-order-by="name"
+                                        data-order-dir="asc">Name - ASC</button>
+                                </li>
+                                <li>
+                                    <button class="dropdown-item sort-value" type="button" data-order-by="name"
+                                        data-order-dir="desc">Name - DESC</button>
+                                </li>
+                                <li>
+                                    <button class="dropdown-item sort-value" type="button" data-order-by="status"
+                                        data-order-dir="asc">Status - ASC</button>
+                                </li>
+                                <li>
+                                    <button class="dropdown-item sort-value" type="button" data-order-by="status"
+                                        data-order-dir="desc">Status - DESC</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <h4 class="mb-0"><span class="badge bg-success" id="sort-display">NAME - ASC</span></h2>
+                    </div>
+                    <div class="col-5">
+                        <button type="button" class="btn btn-info btn-block" id="btn-toggle-form"
+                            data-toggle-form="false">Add Task</button>
+                    </div>
+                </div>
+                <!-- CONTROL : END -->
+
+                <!-- FORM : START -->
+                <div class="row mt-3 d-none" id="area-form">
+                    <div class="col-sm-5 offset-sm-7">
+                        <div class="d-flex">
+                            <input type="hidden" id="input-id">
+                            <input type="text" id="input-name" placeholder="Task Name" class="form-control me-1" />
+                            <select id="input-status" class="form-select me-1" style="width: unset">
+                                <option value="small">Small</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                            <button type="button" class="btn btn-primary btn-sm me-1" data-mdb-ripple-unbound="true"
+                                id="btn-submit">Submit</button>
+                            <button type="button" class="btn btn-danger btn-sm" data-mdb-ripple-unbound="true"
+                                id="btn-cancel">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- FORM : END -->
+            </div>
+        </div>
+
+        <!-- LIST: START -->
+        <div class="card border mt-3">
+            <div class="card-header bg-success text-white">List Task</div>
+            <div class="card-body table-responsive">
+                <table class="table align-middle">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Task</th>
+                            <th scope="col" class="col-level">Status</th>
+                            <th scope="col" class="col-action">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="area-list-task">
+                        <!-- <tr>
+                            <td>1</th>
+                            <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum, dolore.</td>
+                            <td><span class="badge bg-danger">High</span></td>
+                            <td>
+                                <button class="btn btn-warning">Edit</button>
+                                <button class="btn btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</th>
+                            <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum, dolore.</td>
+                            <td><span class="badge bg-dark">Small</span></td>
+                            <td>
+                                <button class="btn btn-warning">Edit</button>
+                                <button class="btn btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</th>
+                            <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum, dolore.</td>
+                            <td><span class="badge bg-info">Medium</span></td>
+                            <td>
+                                <button class="btn btn-warning">Edit</button>
+                                <button class="btn btn-danger">Delete</button>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- LIST: END -->
+    </div>
+    <script src="js/mdb.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+
+</html>
